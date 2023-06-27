@@ -56,7 +56,7 @@ const Search: React.FC = () => {
       <LocationButton
         onClick={() => {
           if (navigator.geolocation) {
-            console.log(navigator.geolocation.getCurrentPosition(showPosition))
+            navigator.geolocation.getCurrentPosition(showPosition)
           } else {
             alert('Geolocation is not supported by this browser.')
           }
