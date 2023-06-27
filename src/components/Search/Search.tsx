@@ -49,7 +49,7 @@ const Search: React.FC = () => {
       <SearchIcon />
       <DebounceInput
         element={SearchInput}
-        debounceTimeout={600}
+        debounceTimeout={800}
         onChange={onSearchInputChanged}
         placeholder="Search for location"
       />
