@@ -1,3 +1,5 @@
+import { ReceivedCity } from './types'
+
 const GEO_API_URL = 'https://wft-geo-db.p.rapidapi.com/v1/geo'
 const GEO_API_OPTIONS = {
   method: 'GET',
@@ -7,12 +9,12 @@ const GEO_API_OPTIONS = {
   },
 }
 
-export const fetchCities = async (input: any) => {
+export const fetchCities = async (input: string) => {
   const url = `${GEO_API_URL}/cities?minPopulation=10000&namePrefix=${input}`
   const res = await (await fetch(url, GEO_API_OPTIONS)).json()
   return res.data
-    .filter((item: any) => item.type === 'CITY')
-    .map((i: any) => {
+    .filter((item: ReceivedCity) => item.type === 'CITY')
+    .map((i: ReceivedCity) => {
       return i.city + ', ' + i.country
     })
 }

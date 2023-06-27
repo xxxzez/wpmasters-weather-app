@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { DebounceInput } from 'react-debounce-input'
 import { useDispatch } from 'react-redux'
 import { fetchWeather } from '../../store/fetchWeather'
@@ -26,14 +26,15 @@ const Search: React.FC = () => {
       return
     }
     setShowSuggestions(true)
-    fetchCities(searchTerm).then((res: any) => {
+    fetchCities(searchTerm).then((res: string[]) => {
+      console.log(res)
       setSuggestions(res)
     })
   }, [searchTerm])
 
   useClickOutside(suggestionRef, () => setShowSuggestions(false))
 
-  const onSearchInputChanged = (e: any) => {
+  const onSearchInputChanged = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value)
   }
   const showPosition = (position: any) => {

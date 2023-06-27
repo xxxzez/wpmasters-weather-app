@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { ReactComponent as HighIcon } from '../../assets/high-icon.svg';
-import { ReactComponent as HumidityIcon } from '../../assets/humidity-icon.svg';
-import { ReactComponent as LowIcon } from '../../assets/low-icon.svg';
-import { ReactComponent as PressureIcon } from '../../assets/pressure-icon.svg';
-import { ReactComponent as WindIcon } from '../../assets/wind-icon.svg';
-import { AppStore } from '../../store/store';
-import { changeTempUnit } from '../../store/reducers/appReducer';
-import { kmToMile, TempUnit } from '../../utils/unitConversion';
-import ToggleSwitch from '../ui/ToggleSwitch/ToggleSwitch';
-import WeatherIcon from './WeatherIcon';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { ReactComponent as HighIcon } from '../../assets/high-icon.svg'
+import { ReactComponent as HumidityIcon } from '../../assets/humidity-icon.svg'
+import { ReactComponent as LowIcon } from '../../assets/low-icon.svg'
+import { ReactComponent as PressureIcon } from '../../assets/pressure-icon.svg'
+import { ReactComponent as WindIcon } from '../../assets/wind-icon.svg'
+import { AppStore } from '../../store/store'
+import { changeTempUnit } from '../../store/reducers/appReducer'
+import { kmToMile, TempUnit } from '../../utils/unitConversion'
+import ToggleSwitch from '../ui/ToggleSwitch/ToggleSwitch'
+import WeatherIcon from './WeatherIcon'
 import {
   CurrentWeatherStatus,
   CurrentWeatherContainer,
@@ -20,25 +20,27 @@ import {
   SectionTitle,
   WeatherContainer,
   WeatherDegree,
-} from './styled';
-import Temperature from './Temperature';
+} from './styled'
+import Temperature from './Temperature'
 
 const CurrentWeather: React.FC = () => {
-  const { weather, degreeType, isInitial, isError } = useSelector((store: AppStore) => ({
-    weather: store.weather.weatherData,
-    degreeType: store.app.tempUnit,
-    isInitial: store.app.isInitial,
-    isError: store.weather.isError,
-  }));
-  const dispatch = useDispatch();
+  const { weather, degreeType, isInitial, isError } = useSelector(
+    (store: AppStore) => ({
+      weather: store.weather.weatherData,
+      degreeType: store.app.tempUnit,
+      isInitial: store.app.isInitial,
+      isError: store.weather.isError,
+    })
+  )
+  const dispatch = useDispatch()
 
   useEffect(() => {
     if (isError) {
-      console.log('Cannot load weather for this place');
+      console.log('Cannot load weather for this place')
     }
-  }, [isError]);
+  }, [isError])
 
-  if (isInitial) return <></>;
+  if (isInitial) return <></>
 
   return (
     <WeatherContainer>
@@ -89,7 +91,9 @@ const CurrentWeather: React.FC = () => {
               <WindIcon /> Wind
             </div>
             <span>
-              {degreeType === TempUnit.CELCIUS ? weather.wind.speed : kmToMile(weather.wind.speed)}
+              {degreeType === TempUnit.CELCIUS
+                ? weather.wind.speed
+                : kmToMile(weather.wind.speed)}
               {degreeType === TempUnit.CELCIUS ? 'kph' : 'mph'}
             </span>
           </InfoRow>
@@ -102,7 +106,7 @@ const CurrentWeather: React.FC = () => {
         </CurrentWeatherInfo>
       </CurrentWeatherContainer>
     </WeatherContainer>
-  );
-};
+  )
+}
 
-export default CurrentWeather;
+export default CurrentWeather

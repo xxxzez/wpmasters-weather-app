@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const Switch = styled.label`
   position: relative;
@@ -35,7 +35,7 @@ const Switch = styled.label`
   .off {
     padding-left: 15px;
   }
-`;
+`
 const Slider = styled.div`
   position: absolute;
   height: 16px;
@@ -46,27 +46,31 @@ const Slider = styled.div`
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 44px;
-`;
+`
 
 interface IToggleSwitchProps {
-  onClick: Function;
+  onClick: Function
 }
 
 const ToggleSwitch: React.FC<IToggleSwitchProps> = (props) => {
-  const [toggled, setToggled] = React.useState(false);
+  const [toggled, setToggled] = React.useState(false)
 
   return (
     <Switch
       onClick={() => {
-        setToggled((checked) => !checked);
-        props.onClick();
+        setToggled((checked) => !checked)
+        props.onClick()
       }}
     >
       {toggled && <span className="on">C</span>}
       {!toggled && <span className="off">F</span>}
-      <Slider style={{ transform: toggled ? ' translateX(28px)' : ' translateX(0px)' }}></Slider>
+      <Slider
+        style={{
+          transform: toggled ? ' translateX(28px)' : ' translateX(0px)',
+        }}
+      ></Slider>
     </Switch>
-  );
-};
+  )
+}
 
-export default ToggleSwitch;
+export default ToggleSwitch

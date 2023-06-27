@@ -52,7 +52,6 @@ export const transformWeatherData = (
   weather.wind.speed = Math.round(weather.wind.speed * 3.6)
 
   const next7Days = getNextSevenDays()
-
   res[1].list.forEach((i: any, index: number) => {
     forecast.push({
       day: next7Days[index],

@@ -1,4 +1,4 @@
-import './Spinner.styles.css';
+import './Spinner.styles.css'
 
 const Spinner = () => {
   return (
@@ -12,6 +12,6 @@ const Spinner = () => {
         <div className="sk-chase-dot"></div>
       </div>
     </div>
-  );
-};
-export default Spinner;
+  )
+}
+export default Spinner

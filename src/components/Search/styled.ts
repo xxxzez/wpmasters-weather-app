@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { ReactComponent as LocationIconSvg } from '../../assets/location-icon.svg';
-import { ReactComponent as SearchIconSvg } from '../../assets/search-icon.svg';
+import styled from 'styled-components'
+import { ReactComponent as LocationIconSvg } from '../../assets/location-icon.svg'
+import { ReactComponent as SearchIconSvg } from '../../assets/search-icon.svg'
 
 export const SearchElement = styled.div`
   position: relative;
@@ -12,7 +12,7 @@ export const SearchElement = styled.div`
   display: flex;
   align-items: center;
   z-index: 1;
-`;
+`
 export const SearchInput = styled.input`
   flex: 1;
   margin-left: 1rem;
@@ -28,11 +28,11 @@ export const SearchInput = styled.input`
   &::placeholder {
     color: ${({ theme }) => theme.searchInput.placeholderColor};
   }
-`;
+`
 export const SearchIcon = styled(SearchIconSvg)`
   margin-left: 1.2rem;
   fill: #4a6fa1;
-`;
+`
 export const LocationButton = styled.button`
   border: none;
   cursor: pointer;
@@ -41,11 +41,11 @@ export const LocationButton = styled.button`
   display: contents;
   &:hover svg {
   }
-`;
+`
 export const LocationIcon = styled(LocationIconSvg)`
   margin-right: 1.2rem;
   fill: #4a6fa1;
-`;
+`
 export const SearchResult = styled.div`
   display: flex;
   flex-direction: column;
@@ -57,7 +57,7 @@ export const SearchResult = styled.div`
   top: 3.35rem;
   border-radius: 5px;
   overflow: hidden;
-`;
+`
 
 export const SuggestionItem = styled.a`
   color: #2079c9;
@@ -65,10 +65,12 @@ export const SuggestionItem = styled.a`
   padding: 0.6rem 1rem;
   display: block;
   text-align: left;
-  border-bottom: 1px dotted ${({ theme }) => theme.searchSuggestion.seperatorLineColor};
+  border-bottom: 1px dotted
+    ${({ theme }) => theme.searchSuggestion.seperatorLineColor};
   font-size: 1rem;
   cursor: pointer;
   &:hover {
-    background-color: ${({ theme }) => theme.searchSuggestion.hoverBackgroundColor};
+    background-color: ${({ theme }) =>
+      theme.searchSuggestion.hoverBackgroundColor};
   }
-`;
+`

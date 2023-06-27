@@ -1,32 +1,32 @@
-import lightBg from './assets/bg.svg';
-import darkBg from './assets/darkBg.svg';
+import lightBg from './assets/bg.svg'
+import darkBg from './assets/darkBg.svg'
 
 export interface Theme {
-  appTitleColor: string;
-  backgroundImage: string;
+  appTitleColor: string
+  backgroundImage: string
   backgroundGradient: {
-    color1: string;
-    color2: string;
-  };
-  panelBgColor: string;
-  panelTitleColor: string;
-  forecastPanelBgColor: string;
+    color1: string
+    color2: string
+  }
+  panelBgColor: string
+  panelTitleColor: string
+  forecastPanelBgColor: string
   searchInput: {
-    color: string;
-    placeholderColor: string;
-  };
+    color: string
+    placeholderColor: string
+  }
   temperatureSwitch: {
-    backgroundColor: string;
-    sliderColor: string;
-    textColor: string;
-  };
+    backgroundColor: string
+    sliderColor: string
+    textColor: string
+  }
   searchSuggestion: {
-    backgroundColor: string;
-    hoverBackgroundColor: string;
-    seperatorLineColor: string;
-  };
-  smallIconColor: string;
-  smallIconTextColor: string;
+    backgroundColor: string
+    hoverBackgroundColor: string
+    seperatorLineColor: string
+  }
+  smallIconColor: string
+  smallIconTextColor: string
 }
 
 export const lightTheme: Theme = {
@@ -55,7 +55,7 @@ export const lightTheme: Theme = {
   },
   smallIconColor: '#A1B9CE',
   smallIconTextColor: '#7B98B2',
-};
+}
 
 export const darkTheme: Theme = {
   appTitleColor: '#2F5D8A',
@@ -83,4 +83,4 @@ export const darkTheme: Theme = {
   },
   smallIconColor: '#153C5E',
   smallIconTextColor: '#3975AB',
-};
+}

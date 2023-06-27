@@ -1,37 +1,37 @@
-import React from 'react';
-import { ReactComponent as CloudyIcon } from '../../assets/weather/cloudy.svg';
-import { ReactComponent as HazeIcon } from '../../assets/weather/haze.svg';
-import { ReactComponent as HeavyRainIcon } from '../../assets/weather/heavy-rain.svg';
-import { ReactComponent as PartlyCloudyIcon } from '../../assets/weather/partly-cloudy.svg';
-import { ReactComponent as RainIcon } from '../../assets/weather/rain.svg';
-import { ReactComponent as SleetIcon } from '../../assets/weather/sleet.svg';
-import { ReactComponent as SnowIcon } from '../../assets/weather/snow.svg';
-import { ReactComponent as SunnyIcon } from '../../assets/weather/sunny.svg';
-import { ReactComponent as ThunderstormIcon } from '../../assets/weather/thunderstorm.svg';
+import React from 'react'
+import { ReactComponent as CloudyIcon } from '../../assets/weather/cloudy.svg'
+import { ReactComponent as HazeIcon } from '../../assets/weather/haze.svg'
+import { ReactComponent as HeavyRainIcon } from '../../assets/weather/heavy-rain.svg'
+import { ReactComponent as PartlyCloudyIcon } from '../../assets/weather/partly-cloudy.svg'
+import { ReactComponent as RainIcon } from '../../assets/weather/rain.svg'
+import { ReactComponent as SleetIcon } from '../../assets/weather/sleet.svg'
+import { ReactComponent as SnowIcon } from '../../assets/weather/snow.svg'
+import { ReactComponent as SunnyIcon } from '../../assets/weather/sunny.svg'
+import { ReactComponent as ThunderstormIcon } from '../../assets/weather/thunderstorm.svg'
 
 interface IWeatherIconProps {
-  code: number;
-  big?: boolean;
+  code: number
+  big?: boolean
 }
 
 const WeatherIcon: React.FC<IWeatherIconProps> = (props) => {
-  let Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  let Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
 
   switch (props.code) {
     // Clear
     case 800:
-      Icon = SunnyIcon;
-      break;
+      Icon = SunnyIcon
+      break
 
     // Cloud
     case 801:
     case 802:
-      Icon = PartlyCloudyIcon;
-      break;
+      Icon = PartlyCloudyIcon
+      break
     case 803:
     case 804:
-      Icon = CloudyIcon;
-      break;
+      Icon = CloudyIcon
+      break
 
     // Rain
     case 500:
@@ -39,15 +39,15 @@ const WeatherIcon: React.FC<IWeatherIconProps> = (props) => {
     case 520:
     case 521:
     case 511:
-      Icon = RainIcon;
-      break;
+      Icon = RainIcon
+      break
     case 502:
     case 503:
     case 504:
     case 522:
     case 531:
-      Icon = HeavyRainIcon;
-      break;
+      Icon = HeavyRainIcon
+      break
 
     // Drizzle
     case 300:
@@ -59,8 +59,8 @@ const WeatherIcon: React.FC<IWeatherIconProps> = (props) => {
     case 313:
     case 314:
     case 321:
-      Icon = RainIcon;
-      break;
+      Icon = RainIcon
+      break
 
     // Thunderstorm
     case 200:
@@ -73,8 +73,8 @@ const WeatherIcon: React.FC<IWeatherIconProps> = (props) => {
     case 230:
     case 231:
     case 232:
-      Icon = ThunderstormIcon;
-      break;
+      Icon = ThunderstormIcon
+      break
 
     // Snow
     case 600:
@@ -87,11 +87,11 @@ const WeatherIcon: React.FC<IWeatherIconProps> = (props) => {
     case 620:
     case 621:
     case 622:
-      Icon = SnowIcon;
-      break;
+      Icon = SnowIcon
+      break
     case 611:
-      Icon = SleetIcon;
-      break;
+      Icon = SleetIcon
+      break
 
     // Atmosphere
     case 701:
@@ -104,13 +104,17 @@ const WeatherIcon: React.FC<IWeatherIconProps> = (props) => {
     case 762:
     case 771:
     case 781:
-      Icon = HazeIcon;
-      break;
+      Icon = HazeIcon
+      break
 
     default:
-      Icon = SunnyIcon;
+      Icon = SunnyIcon
   }
-  return props.big ? <Icon style={{ width: '100px', height: '100px' }} /> : <Icon />;
-};
+  return props.big ? (
+    <Icon style={{ width: '100px', height: '100px' }} />
+  ) : (
+    <Icon />
+  )
+}
 
-export default WeatherIcon;
+export default WeatherIcon

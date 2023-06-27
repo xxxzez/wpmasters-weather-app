@@ -1,38 +1,54 @@
 export type WeatherData = {
   weather: {
-    id: number;
-    main: string;
-    description: string;
-    icon: string;
-  };
+    id: number
+    main: string
+    description: string
+    icon: string
+  }
   main: {
-    temp: number;
-    feels_like: number;
-    temp_min: number;
-    temp_max: number;
-    pressure: number;
-    humidity: number;
-  };
+    temp: number
+    feels_like: number
+    temp_min: number
+    temp_max: number
+    pressure: number
+    humidity: number
+  }
   wind: {
-    speed: number;
-    deg: number;
-  };
+    speed: number
+    deg: number
+  }
   sys: {
-    country: string;
-    sunrise: number;
-    sunset: number;
-  };
-  name: string;
+    country: string
+    sunrise: number
+    sunset: number
+  }
+  name: string
 }
 
 export type ExtendedForecastData = {
-  day: string;
+  day: string
   temp: {
-    temp_min: number;
-    temp_max: number;
-  };
+    temp_min: number
+    temp_max: number
+  }
   weather: {
-    id: number;
-    main: string;
-  };
+    id: number
+    main: string
+  }
+}
+
+export type ReceivedCity = {
+  city: string
+  country: string
+  countryCode: string
+  id: number
+  latitude: number
+  longitude: number
+  name: string
+  population: number
+  region: string
+  regionCode: string
+  regionWdId: string
+  type: string
+  wikiDataId: string
 }

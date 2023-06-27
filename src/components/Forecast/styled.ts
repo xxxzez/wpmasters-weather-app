@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const ForecastContainer = styled.div`
   margin-top: 1rem;
@@ -7,12 +7,12 @@ export const ForecastContainer = styled.div`
   border-radius: 15px;
   padding: 1.5rem 2rem;
   overflow: hidden;
-`;
+`
 export const SectionTitle = styled.h6`
   font-weight: 500;
   font-size: 1.125rem;
   color: ${({ theme }) => theme.panelTitleColor};
-`;
+`
 export const ForecastItems = styled.div`
   display: flex;
   justify-content: space-between;
@@ -21,7 +21,7 @@ export const ForecastItems = styled.div`
   > :last-child {
     margin-right: 0;
   }
-`;
+`
 export const ForecastItemContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -48,4 +48,4 @@ export const ForecastItemContainer = styled.div`
     width: 5rem;
     text-align: center;
   }
-`;
+`
