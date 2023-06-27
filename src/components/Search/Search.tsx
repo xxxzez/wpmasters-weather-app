@@ -27,7 +27,6 @@ const Search: React.FC = () => {
     }
     setShowSuggestions(true)
     fetchCities(searchTerm).then((res: string[]) => {
-      console.log(res)
       setSuggestions(res)
     })
   }, [searchTerm])
@@ -37,7 +36,7 @@ const Search: React.FC = () => {
   const onSearchInputChanged = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value)
   }
-  const showPosition = (position: any) => {
+  const showPosition = (position: GeolocationPosition) => {
     dispatch(
       fetchWeather({
         lat: position.coords.latitude,
