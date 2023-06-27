@@ -1,4 +1,6 @@
 # WP Masters Weather App
+![Screenshot 2023-06-27 073505](https://github.com/xxxzez/wpmasters-weather-app/assets/47398536/6ba6a3f9-fede-4d99-8c2a-635ba7de1ff1)
+![Screenshot 2023-06-27 073612](https://github.com/xxxzez/wpmasters-weather-app/assets/47398536/c3b98883-ee11-44e0-95e5-7e1b11adb29d)
 
 Weather App built with React.
 [Live Demo](https://wpmasters-weather-app.vercel.app/)
